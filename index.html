@@ -1,149 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curso Profesional de IA y Monetización</title>
-  <style>
-    /* Fuentes y base */
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0f0f1f, #1a1a2e);
-      color: #ffffff;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso Profesional: IA y Generación de Ingresos</title>
+<style>
+  /* Estilo general */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7fc; /* fondo claro y suave */
+    color: #1a1a1a; /* texto oscuro para buena lectura */
+    margin: 0;
+    padding: 0;
+  }
 
-    /* Header principal */
-    header {
-      background: linear-gradient(90deg, #0ff, #08f);
-      padding: 40px 20px;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0,255,255,0.2);
-      border-bottom: 2px solid #08f;
-    }
+  /* Header / Carátula */
+  header {
+    background: linear-gradient(135deg, #8ab6d6, #c0d6e4); /* degradado elegante y futurista */
+    text-align: center;
+    padding: 60px 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
 
-    header h1 {
-      font-size: 2.5em;
-      color: #0ff;
-      text-shadow: 0 0 10px #0ff, 0 0 20px #08f;
-      margin: 0;
-    }
+  header h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #0d1b2a; /* elegante, visible */
+  }
 
-    header p {
-      font-size: 1.2em;
-      color: #c0fefe;
-      margin-top: 10px;
-    }
+  header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #1a2930;
+  }
 
-    /* Secciones */
-    section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
-      background: rgba(20,20,35,0.85);
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,255,255,0.1);
-    }
+  /* Botón principal */
+  .btn-start {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #4a90e2; /* azul futurista pero elegante */
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
 
-    section h2 {
-      color: #0ff;
-      text-shadow: 0 0 5px #0ff;
-      border-bottom: 2px solid #08f;
-      padding-bottom: 5px;
-    }
+  .btn-start:hover {
+    background-color: #357ABD;
+    transform: translateY(-3px);
+  }
 
-    section p {
-      line-height: 1.6;
-      font-size: 1em;
-      color: #e0e0e0;
-    }
+  /* Sección de bienvenida */
+  .intro {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
 
-    /* Placeholders para imágenes/videos */
-    .placeholder {
-      background: rgba(0,255,255,0.05);
-      border: 2px dashed #0ff;
-      border-radius: 10px;
-      height: 200px;
-      margin: 20px 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #0ff;
-      font-style: italic;
-      font-size: 1em;
-      text-align: center;
-      text-shadow: 0 0 5px #08f;
-    }
+  .intro h2 {
+    font-size: 2em;
+    color: #0d1b2a;
+    margin-bottom: 20px;
+  }
 
-    /* Botones futuristas */
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      margin-top: 20px;
-      font-size: 1em;
-      color: #0ff;
-      border: 2px solid #0ff;
-      border-radius: 8px;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px rgba(0,255,255,0.3);
-    }
+  .intro p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #1a2930;
+  }
 
-    .btn:hover {
-      background: rgba(0,255,255,0.1);
-      box-shadow: 0 0 20px #0ff, 0 0 40px #08f;
-    }
-
-    /* Footer simple */
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #888;
-      font-size: 0.9em;
-    }
-  </style>
+  /* Placeholder para imágenes/videos */
+  .placeholder {
+    margin: 30px auto;
+    padding: 60px 20px;
+    background: #e0e7ef; /* bloque suave claro */
+    color: #4a4a4a;
+    border-radius: 10px;
+    text-align: center;
+    font-style: italic;
+    font-size: 1em;
+  }
+</style>
 </head>
 <body>
 
 <header>
-  <h1>Curso Profesional de IA y Monetización</h1>
-  <p>Aprende a usar la Inteligencia Artificial para generar ingresos y crear cursos online efectivos</p>
+  <h1>Curso Profesional: IA y Generación de Ingresos</h1>
+  <p>Aprende a aprovechar la inteligencia artificial para crear cursos, aplicaciones y generar ingresos reales</p>
+  <a href="#modulo1" class="btn-start">Comenzar Curso</a>
 </header>
 
-<section>
-  <h2>Bienvenida</h2>
-  <p>Este curso te guiará desde la comprensión de la Inteligencia Artificial hasta la creación de cursos y apps rentables. Aprenderás técnicas de generación de contenido, recursos multimedia, HTML básico y publicación profesional.</p>
-  <div class="placeholder">Espacio para imagen o video de introducción</div>
+<section class="intro" id="modulo1">
+  <h2>Bienvenido al curso</h2>
+  <p>En este curso aprenderás desde cero cómo usar la IA para generar contenido educativo, aplicaciones y estrategias de monetización. Todo explicado paso a paso, con ejercicios prácticos y recursos multimedia.</p>
 </section>
 
-<section>
-  <h2>Objetivos del curso</h2>
-  <p>- Usar IA para generar contenidos educativos y recursos multimedia.</p>
-  <p>- Publicar tu curso online y aprender estrategias de monetización.</p>
-  <p>- Integrar ejercicios prácticos y soluciones efectivas para principiantes.</p>
-  <div class="placeholder">Espacio para gráfico de objetivos</div>
-</section>
-
-<section>
-  <h2>Requisitos</h2>
-  <p>- Computadora con Windows o Mac.</p>
-  <p>- Navegador actualizado y conexión a Internet estable.</p>
-  <p>- Disposición a aprender y experimentar con IA.</p>
-  <div class="placeholder">Espacio para iconos de requisitos</div>
-</section>
-
-<section>
-  <h2>Comienza tu viaje con IA</h2>
-  <p>Prepárate para explorar la IA y generar ideas de cursos que te permitirán monetizar tu conocimiento. Cada módulo incluirá ejercicios, recursos visuales y pasos detallados, incluso para quienes nunca han usado HTML o GitHub.</p>
-  <div class="placeholder">Espacio para video motivacional de inicio</div>
-  <a href="#modulo1" class="btn">Ir al Módulo 1</a>
-</section>
-
-<footer>
-  &copy; 2025 Curso Profesional de IA y Monetización
-</footer>
+<div class="placeholder">Aquí irá una imagen o infografía de bienvenida</div>
+<div class="placeholder">Aquí irá un video introductorio</div>
 
 </body>
 </html><!DOCTYPE html>
