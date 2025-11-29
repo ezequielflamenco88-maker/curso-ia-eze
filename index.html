@@ -1,208 +1,222 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curso: Cómo Crear Cursos y Ganar Plata con IA</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
-    h1, h2, h3 { color: #2E86C1; }
-    h1 { border-bottom: 2px solid #2E86C1; padding-bottom: 10px; }
-    nav { margin-bottom: 30px; }
-    nav a { margin-right: 15px; text-decoration: none; color: #117A65; }
-    .module { border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
-    .exercise { background-color: #f9f9f9; padding: 10px; margin-top: 10px; border-left: 4px solid #2E86C1; }
-    button { background-color: #2E86C1; color: white; border: none; padding: 8px 12px; border-radius: 3px; cursor: pointer; margin-top: 10px; }
-    button:active { background-color: #117A65; }
-    .completed { text-decoration: line-through; color: gray; }
-  </style>
-  <script>
-    function markCompleted(id) {
-      var elem = document.getElementById(id);
-      if(elem.classList.contains("completed")) {
-        elem.classList.remove("completed");
-      } else {
-        elem.classList.add("completed");
-      }
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Completo: Cómo Crear Cursos y Ganar Plata con IA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+        }
+        .module {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .exercise {
+            background-color: #e8f0fe;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 5px solid #4285f4;
+        }
+        ul {
+            margin-left: 20px;
+        }
+    </style>
 </head>
 <body>
+    <h1>Curso Completo: Cómo Crear Cursos y Ganar Plata con IA</h1>
 
-  <h1>Curso: Cómo Crear Cursos y Ganar Plata con IA</h1>
-
-  <nav>
-    <a href="#mod1">Módulo 1</a>
-    <a href="#mod2">Módulo 2</a>
-    <a href="#mod3">Módulo 3</a>
-    <a href="#mod4">Módulo 4</a>
-    <a href="#mod5">Módulo 5</a>
-    <a href="#mod6">Módulo 6</a>
-    <a href="#mod7">Módulo 7</a>
-    <a href="#mod8">Módulo 8</a>
-  </nav>
-
-  <!-- MÓDULO 1 -->
-  <div class="module" id="mod1">
-    <h2>Módulo 1 – Fundamentos</h2>
-    <p><strong>Objetivo:</strong> Entender qué es la IA aplicada a cursos online.</p>
-    <p><strong>Contenido:</strong></p>
-    <ul>
-      <li>Qué es la IA (explicado simple y sin tecnicismos).</li>
-      <li>Por qué hoy cualquier persona puede crear cursos con IA.</li>
-      <li>Qué herramientas existen (gratuitas y pagas).</li>
-      <li>En qué casos usar IA para acelerar el trabajo.</li>
-    </ul>
-    <p><strong>Paso a paso:</strong></p>
-    <ol>
-      <li>Entrar a una IA de lenguaje (ChatGPT, Claude, Gemini).</li>
-      <li>Probar pedir definiciones simples.</li>
-      <li>Identificar un tema que quieras enseñar.</li>
-      <li>Pedirle a la IA un esquema inicial del curso.</li>
-    </ol>
-    <div class="exercise" id="mod1ex1">
-      <strong>Ejercicio:</strong> Elige un tema que te guste e intenta obtener un índice tentativo con IA.<br>
-      <button onclick="markCompleted('mod1ex1')">Marcar como completado</button>
-    </div>
-  </div>
-
-  <!-- MÓDULO 2 -->
-  <div class="module" id="mod2">
-    <h2>Módulo 2 – Definición del Tema y Nicho</h2>
-    <p><strong>Objetivo:</strong> Elegir un tema rentable y adecuado para tu experiencia.</p>
-    <ul>
-      <li>Cómo elegir un tema que la gente quiera aprender.</li>
-      <li>Qué hace que un curso sea vendible.</li>
-      <li>Principios básicos de oferta/demanda en cursos.</li>
-    </ul>
-    <ol>
-      <li>Hacer una lista de temas que conocés o te interesan.</li>
-      <li>Buscar en YouTube, TikTok y Google si ese tema tiene demanda.</li>
-      <li>Preguntar a la IA: “¿Qué subtemas suelen interesar en este tema?”.</li>
-    </ol>
-    <div class="exercise" id="mod2ex1">
-      <strong>Ejercicio:</strong> Elige un nicho y anota tres motivos por los que alguien lo compraría.<br>
-      <button onclick="markCompleted('mod2ex1')">Marcar como completado</button>
-    </div>
-  </div>
-
-  <!-- MÓDULO 3 -->
-  <div class="module" id="mod3">
-    <h2>Módulo 3 – Guion del Curso</h2>
-    <p><strong>Objetivo:</strong> Crear un guion claro y profesional.</p>
-    <ul>
-      <li>Cómo escribir módulos y lecciones efectivas.</li>
-      <li>Estructura estándar usada por plataformas profesionales.</li>
-    </ul>
-    <ol>
-      <li>Usa IA para expandir el índice del curso.</li>
-      <li>Pide explicaciones claras y sin relleno.</li>
-      <li>Ajusta el tono según tu público (15 a 40).</li>
-    </ol>
-    <div class="exercise" id="mod3ex1">
-      <strong>Ejercicio:</strong> Crear el guion de una lección usando IA.<br>
-      <button onclick="markCompleted('mod3ex1')">Marcar como completado</button>
+    <!-- Módulo 1 -->
+    <div class="module" id="modulo1">
+        <h2>Módulo 1 – Fundamentos de la IA en Cursos Online</h2>
+        <p><strong>Objetivo:</strong> Entender qué es la Inteligencia Artificial y cómo se puede aplicar para crear cursos online.</p>
+        <h3>Contenido:</h3>
+        <ul>
+            <li>Qué es la IA explicado simple y sin tecnicismos.</li>
+            <li>Por qué hoy cualquier persona puede crear cursos con IA.</li>
+            <li>Qué herramientas existen (gratuitas y pagas) para generar contenido, imágenes, videos y guiones.</li>
+            <li>En qué casos usar IA para acelerar el trabajo y aumentar la productividad.</li>
+        </ul>
+        <h3>Paso a Paso:</h3>
+        <ol>
+            <li>Elegí un tema que te interese enseñar o un área que domines.</li>
+            <li>Ingresá a una IA de lenguaje como ChatGPT, Claude o Gemini.</li>
+            <li>Pide definiciones simples para entender conceptos y herramientas.</li>
+            <li>Identificá qué tipo de curso te gustaría crear.</li>
+            <li>Pedí a la IA un esquema inicial del curso.</li>
+        </ol>
+        <div class="exercise">
+            <strong>Ejercicio:</strong> Elegí un tema que te guste e intentá obtener un índice tentativo usando la IA. Guardalo para usarlo en los siguientes módulos.
+        </div>
+        <p><strong>Tip:</strong> No te preocupes si tu primer índice no es perfecto. Lo ajustaremos a medida que avancemos en los módulos.</p>
     </div>
 
-    <!-- Ejercicio 5: HTML paso a paso -->
-    <div class="exercise" id="mod3ex5">
-      <strong>Ejercicio:</strong> Crear y ver tu curso en HTML.<br>
-      <ol>
-        <li>Crear un archivo <code>index.html</code> con tu guion.</li>
-        <li>Subirlo a un repositorio en GitHub (Add file → Upload files → Commit changes).</li>
-        <li>Activar GitHub Pages (Settings → Pages → Deploy from branch → main → /root → Save).</li>
-        <li>Copiar el link que te da GitHub Pages y abrir en el navegador.</li>
-        <li>Verificar títulos, lecciones y ejercicios. Ajustar si hace falta.</li>
-      </ol>
-      <button onclick="markCompleted('mod3ex5')">Marcar como completado</button>
+    <!-- Módulo 2 -->
+    <div class="module" id="modulo2">
+        <h2>Módulo 2 – Definición del Tema y Nicho</h2>
+        <p><strong>Objetivo:</strong> Elegir un tema rentable y adecuado para tu experiencia.</p>
+        <h3>Contenido:</h3>
+        <ul>
+            <li>Cómo elegir un tema que la gente quiera aprender.</li>
+            <li>Qué hace que un curso sea vendible.</li>
+            <li>Principios básicos de oferta/demanda en cursos online.</li>
+            <li>Ejemplos de nichos rentables usando búsquedas en YouTube, TikTok y Google Trends.</li>
+        </ul>
+        <h3>Paso a Paso:</h3>
+        <ol>
+            <li>Hacé una lista de temas que conocés o te interesan.</li>
+            <li>Buscá en YouTube, TikTok y Google si ese tema tiene demanda.</li>
+            <li>Consultá con la IA: “¿Qué subtemas suelen interesar en este tema?” y anotá las ideas.</li>
+            <li>Analizá la competencia: buscá cursos similares y evaluá qué ofrecen y qué les falta.</li>
+        </ol>
+        <div class="exercise">
+            <strong>Ejercicio:</strong> Elegí un nicho y anotá tres motivos por los que alguien compraría tu curso. Guardá esa información para crear tu guion.
+        </div>
     </div>
-  </div>
 
-  <!-- MÓDULO 4 -->
-  <div class="module" id="mod4">
-    <h2>Módulo 4 – Recursos Visuales con IA</h2>
-    <p><strong>Objetivo:</strong> Crear imágenes, gráficos y recursos visuales.</p>
-    <ul>
-      <li>Cómo generar imágenes profesionales.</li>
-      <li>Bancos gratuitos vs. IA generativa.</li>
-    </ul>
-    <ol>
-      <li>Elegir una IA de imágenes (gratuita o paga).</li>
-      <li>Escribir un prompt para generar imágenes educativas.</li>
-      <li>Descargar y guardar las imágenes en tu carpeta de proyecto.</li>
-      <li>Crear gráficos y diagramas con Canva o Google Drawings.</li>
-      <li>Integrar imágenes y videos en el HTML.</li>
-    </ol>
-    <div class="exercise" id="mod4ex1">
-      <strong>Ejercicio:</strong> Crear 3 imágenes y 1 diagrama para tu curso.<br>
-      <button onclick="markCompleted('mod4ex1')">Marcar como completado</button>
+    <!-- Módulo 3 -->
+    <div class="module" id="modulo3">
+        <h2>Módulo 3 – Guion del Curso</h2>
+        <p><strong>Objetivo:</strong> Crear un guion claro y profesional para tu curso online.</p>
+        <h3>Contenido:</h3>
+        <ul>
+            <li>Cómo escribir módulos y lecciones efectivas.</li>
+            <li>Estructura estándar usada por plataformas profesionales.</li>
+            <li>Cómo usar la IA para expandir tu índice inicial.</li>
+            <li>Consejos de tono y claridad para público de 15 a 40 años.</li>
+        </ul>
+        <h3>Paso a Paso:</h3>
+        <ol>
+            <li>Usá la IA para expandir el índice del curso generado en el módulo anterior.</li>
+            <li>Pide explicaciones claras y sin relleno para cada lección.</li>
+            <li>Revisá que el contenido sea entendible para alguien que nunca tomó un curso online.</li>
+            <li>Organizá las lecciones de manera lógica y progresiva.</li>
+        </ol>
+        <div class="exercise">
+            <strong>Ejercicio:</strong> Crear el guion de una lección usando IA. Incluí títulos, subtítulos, explicación breve, ejemplos y un mini ejercicio práctico.
+        </div>
     </div>
-  </div>
 
-  <!-- MÓDULO 5 -->
-  <div class="module" id="mod5">
-    <h2>Módulo 5 – Vídeos y Presentaciones</h2>
-    <p><strong>Objetivo:</strong> Crear videos simples usando IA o plantillas.</p>
-    <ul>
-      <li>Softwares gratuitos recomendados: Canva, Clipchamp, Lumen5.</li>
-      <li>Cómo grabar tu voz o usar voces generadas por IA.</li>
-    </ul>
-    <ol>
-      <li>Crear una presentación estilo diapositivas.</li>
-      <li>Agregar texto, imágenes y gráficos generados.</li>
-      <li>Grabar voz real o con IA.</li>
-      <li>Exportar video en MP4 para integrar en tu HTML o subir a plataformas.</li>
-    </ol>
-    <div class="exercise" id="mod5ex1">
-      <strong>Ejercicio:</strong> Crear tu primer video de 1 minuto.<br>
-      <button onclick="markCompleted('mod5ex1')">Marcar como completado</button>
+    <!-- Módulo 4 -->
+    <div class="module" id="modulo4">
+        <h2>Módulo 4 – Recursos Visuales con IA</h2>
+        <p><strong>Objetivo:</strong> Aprender a crear imágenes, gráficos y recursos visuales profesionales para tu curso.</p>
+        <h3>Contenido:</h3>
+        <ul>
+            <li>Cómo generar imágenes educativas y limpias con IA.</li>
+            <li>Bancos gratuitos vs. IA generativa: ventajas y desventajas.</li>
+            <li>Qué estilos visuales usar y cuáles evitar para no distraer al alumno.</li>
+        </ul>
+        <h3>Paso a Paso:</h3>
+        <ol>
+            <li>Abrí una IA de imágenes como MidJourney, DALL·E o Canva.</li>
+            <li>Generá imágenes relacionadas con tu curso.</li>
+            <li>Guardá las imágenes en carpetas organizadas por módulos.</li>
+            <li>Verificá que las imágenes tengan claridad y sean educativas.</li>
+        </ol>
+        <div class="exercise">
+            <strong>Ejercicio:</strong> Crear 3 imágenes relevantes a tu curso y guardarlas para usarlas en las lecciones.
+        </div>
     </div>
-  </div>
 
-  <!-- MÓDULO 6 -->
-  <div class="module" id="mod6">
-    <h2>Módulo 6 – Plataforma y Publicación</h2>
-    <p><strong>Objetivo:</strong> Subir tu curso y dejarlo listo para vender.</p>
-    <ol>
-      <li>Elegir plataforma (Hotmart, Udemy, Teachable, Gumroad).</li>
-      <li>Subir módulos en PDF, videos y HTML.</li>
-      <li>Revisar presentación y navegabilidad del curso.</li>
-    </ol>
-    <div class="exercise" id="mod6ex1">
-      <strong>Ejercicio:</strong> Subir un módulo de prueba a la plataforma elegida.<br>
-      <button onclick="markCompleted('mod6ex1')">Marcar como completado</button>
+    <!-- Módulo 5 -->
+    <div class="module" id="modulo5">
+        <h2>Módulo 5 – Videos y Presentaciones</h2>
+        <p><strong>Objetivo:</strong> Aprender a crear videos simples usando IA o plantillas para tu curso.</p>
+        <h3>Contenido:</h3>
+        <ul>
+            <li>Softwares gratuitos recomendados: Canva, CapCut, OBS, etc.</li>
+            <li>Cómo grabar tu voz o usar voces generadas por IA.</li>
+            <li>Consejos de edición para que tus videos sean claros y didácticos.</li>
+        </ul>
+        <h3>Paso a Paso:</h3>
+        <ol>
+            <li>Creá una presentación estilo diapositivas con los contenidos de tus lecciones.</li>
+            <li>Agregá texto claro y recursos visuales generados en el módulo 4.</li>
+            <li>Grabá tu voz o generá voz con IA.</li>
+            <li>Exportá el video en formato MP4.</li>
+        </ol>
+        <div class="exercise">
+            <strong>Ejercicio:</strong> Crear tu primer video de 1 minuto usando tu presentación y voz. Subilo a la carpeta de tu proyecto.
+        </div>
     </div>
-  </div>
 
-  <!-- MÓDULO 7 -->
-  <div class="module" id="mod7">
-    <h2>Módulo 7 – Marketing y Ventas Básicas</h2>
-    <p><strong>Objetivo:</strong> Crear una estrategia simple y efectiva para vender tu curso.</p>
-    <ol>
-      <li>Elegir canales: TikTok, YouTube Shorts, Instagram.</li>
-      <li>Crear videos cortos con IA y textos atractivos.</li>
-      <li>Publicar con CTA y medir resultados.</li>
-    </ol>
-    <div class="exercise" id="mod7ex1">
-      <strong>Ejercicio:</strong> Crear 5 videos cortos y publicarlos en redes.<br>
-      <button onclick="markCompleted('mod7ex1')">Marcar como completado</button>
+    <!-- Módulo 6 -->
+    <div class="module" id="modulo6">
+        <h2>Módulo 6 – Plataforma y Publicación</h2>
+        <p><strong>Objetivo:</strong> Subir tu curso a una plataforma y dejarlo listo para vender.</p>
+        <h3>Contenido:</h3>
+        <ul>
+            <li>Mejores plataformas para publicar cursos en Argentina y Latinoamérica.</li>
+            <li>Cómo subir videos, PDFs y módulos organizados.</li>
+            <li>Cómo crear un proyecto HTML como ejemplo y usar GitHub Pages para publicarlo.</li>
+        </ul>
+        <h3>Paso a Paso:</h3>
+        <ol>
+            <li>Creá tu cuenta en una plataforma como Hotmart, Udemy o GitHub Pages.</li>
+            <li>Subí tus módulos, videos y PDFs en carpetas organizadas.</li>
+            <li>Si querés publicar un HTML de ejemplo, creá un repositorio en GitHub, subí el archivo HTML y habilitá GitHub Pages desde la sección “Pages”.</li>
+            <li>Copiá el link de tu página para verificar que se ve correctamente.</li>
+        </ol>
+        <div class="exercise">
+            <strong>Ejercicio:</strong> Publicar tu proyecto HTML en GitHub Pages y revisar que se visualicen todos los módulos y contenidos.
+        </div>
     </div>
-  </div>
 
-  <!-- MÓDULO 8 -->
-  <div class="module" id="mod8">
-    <h2>Módulo 8 – Actualización del Curso y Futuro de la IA</h2>
-    <p><strong>Objetivo:</strong> Mantener tu curso actualizado y relevante.</p>
-    <ol>
-      <li>Revisar módulos cada 2–3 meses.</li>
-      <li>Agregar nuevas herramientas o contenidos.</li>
-      <li>Planificar nuevas versiones o series de cursos.</li>
-    </ol>
-    <div class="exercise" id="mod8ex1">
-      <strong>Ejercicio:</strong> Crear un calendario de actualización semestral.<br>
-      <button onclick="markCompleted('mod8ex1')">Marcar como completado</button>
+    <!-- Módulo 7 -->
+    <div class="module" id="modulo7">
+        <h2>Módulo 7 – Marketing y Ventas Básicas</h2>
+        <p><strong>Objetivo:</strong> Crear una estrategia simple y efectiva para promocionar tu curso.</p>
+        <h3>Contenido:</h3>
+        <ul>
+            <li>Uso de TikTok, YouTube Shorts e Instagram para generar ventas.</li>
+            <li>Cómo hacer videos cortos que generen curiosidad.</li>
+            <li>Importancia de incluir CTA (llamadas a la acción) en videos y publicaciones.</li>
+        </ul>
+        <h3>Paso a Paso:</h3>
+        <ol>
+            <li>Creá 5 ideas de videos cortos relacionados a tu curso.</li>
+            <li>Grabá o generá los videos con IA.</li>
+            <li>Publicá los videos incluyendo CTA que dirijan a tu curso.</li>
+        </ol>
+        <div class="exercise">
+            <strong>Ejercicio:</strong> Crear tu primera campaña simple de promoción del curso en redes sociales.
+        </div>
     </div>
-  </div>
+
+    <!-- Módulo 8 -->
+    <div class="module" id="modulo8">
+        <h2>Módulo 8 – Actualización del Curso y Futuro de la IA</h2>
+        <p><strong>Objetivo:</strong> Prepararte para actualizar tu curso y adaptarte a nuevas herramientas de IA.</p>
+        <h3>Contenido:</h3>
+        <ul>
+            <li>La IA cambia rápido: cómo actualizar tu curso periódicamente.</li>
+            <li>Cómo convertir este curso en una “serie” de contenido continuo.</li>
+            <li>Consejos para mantener tu curso actualizado y competitivo.</li>
+        </ul>
+        <h3>Paso a Paso:</h3>
+        <ol>
+            <li>Revisá tu curso cada 2–3 meses.</li>
+            <li>Agregá nuevas herramientas, lecciones o pasos según cambios en IA y demanda del mercado.</li>
+            <li>Evaluá feedback de los estudiantes y ajustá contenido.</li>
+        </ol>
+        <div class="exercise">
+            <strong>Ejercicio:</strong> Planificar la actualización semestral de tu curso y establecer nuevas metas.
+        </div>
+    </div>
 
 </body>
 </html>
+  
