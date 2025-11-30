@@ -5,152 +5,158 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Curso Profesional de IA</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
-
+  /* Fondo cibernético con partículas */
   body {
     margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    background: linear-gradient(135deg, #f0f4f8, #e6f0ff);
-    color: #0f0f0f;
-    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    overflow: hidden;
+    color: #0d1b2a;
   }
 
-  /* Fondo animado cibernético */
-  .background {
+  canvas {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(0, 120, 255, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
-    animation: moveGrid 20s linear infinite;
-    z-index: -1;
-  }
-
-  @keyframes moveGrid {
-    from {background-position: 0 0;}
-    to {background-position: 1000px 1000px;}
+    z-index: 0;
   }
 
   .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    position: relative;
+    z-index: 1;
     text-align: center;
-    padding: 0 20px;
+    padding: 15vh 5vw;
   }
 
   h1 {
-    font-size: 3rem;
-    color: #0040ff;
-    margin-bottom: 0.5rem;
-    text-shadow: 1px 1px 6px rgba(0, 64, 255, 0.4);
+    font-size: 4em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 0.5em;
+    color: #0d1b2a;
   }
 
   h2 {
-    font-size: 1.5rem;
-    color: #0a0a0a;
-    margin-bottom: 2rem;
-  }
-
-  .button-start {
-    background: linear-gradient(90deg, #0040ff, #00d4ff);
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-    text-decoration: none;
-  }
-
-  .button-start:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 64, 255, 0.6);
-  }
-
-  /* Vacíos para multimedia */
-  .placeholder {
-    width: 80%;
-    height: 250px;
-    border: 2px dashed #0040ff;
-    border-radius: 12px;
-    margin: 20px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #0040ff;
+    font-size: 2em;
     font-weight: 500;
-    font-size: 1.1rem;
+    margin-bottom: 1em;
+    color: #1b3b5f;
   }
 
-  /* Efecto cibernético adicional con partículas */
-  .particles {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -2;
+  .subtitle {
+    font-size: 1.2em;
+    color: #2a4d69;
+    margin-bottom: 3em;
   }
 
+  .button {
+    background: linear-gradient(90deg, #1b3b5f, #3b7a9d);
+    color: white;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+  }
+
+  .button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #3b7a9d, #1b3b5f);
+  }
+
+  .placeholder {
+    margin-top: 3em;
+    padding: 2em;
+    border: 2px dashed #1b3b5f;
+    border-radius: 12px;
+    color: #1b3b5f;
+    font-style: italic;
+  }
 </style>
 </head>
 <body>
-  <div class="background"></div>
-  <div class="container">
-    <h1>CURSO PROFESIONAL DE IA</h1>
-    <h2>Aprendé a generar ingresos usando inteligencia artificial</h2>
-    <div class="placeholder">Aquí se puede agregar imagen de portada</div>
-    <a href="#modulo1" class="button-start">Comenzar Curso</a>
-  </div>
+<canvas id="bgCanvas"></canvas>
 
-  <!-- Vacíos para futuras animaciones o partículas -->
-  <canvas class="particles"></canvas>
+<div class="container">
+  <h1>Curso Profesional de IA</h1>
+  <h2>Genera ingresos y domina la inteligencia artificial</h2>
+  <div class="subtitle">Aprende paso a paso a crear cursos y apps rentables usando IA</div>
+  <button class="button">Comenzar Curso</button>
 
-  <script>
-    // Partículas simples tipo cibernético
-    const canvas = document.querySelector('.particles');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+  <div class="placeholder">Espacio para imagen o video de presentación del curso</div>
+</div>
 
-    const particles = [];
-    const particleCount = 60;
+<script>
+  const canvas = document.getElementById('bgCanvas');
+  const ctx = canvas.getContext('2d');
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
 
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 2 + 1,
-        speedX: Math.random() * 0.5 - 0.25,
-        speedY: Math.random() * 0.5 - 0.25
-      });
+  const particles = [];
+  const particleCount = 100;
+
+  function Particle() {
+    this.x = Math.random() * width;
+    this.y = Math.random() * height;
+    this.vx = (Math.random() - 0.5) * 0.5;
+    this.vy = (Math.random() - 0.5) * 0.5;
+    this.radius = Math.random() * 2 + 1;
+  }
+
+  Particle.prototype.draw = function() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(27, 59, 95, 0.7)';
+    ctx.fill();
+  }
+
+  Particle.prototype.update = function() {
+    this.x += this.vx;
+    this.y += this.vy;
+
+    if(this.x < 0 || this.x > width) this.vx *= -1;
+    if(this.y < 0 || this.y > height) this.vy *= -1;
+  }
+
+  for(let i=0;i<particleCount;i++){
+    particles.push(new Particle());
+  }
+
+  function animate() {
+    ctx.clearRect(0,0,width,height);
+    particles.forEach(p => {
+      p.update();
+      p.draw();
+    });
+    connectParticles();
+    requestAnimationFrame(animate);
+  }
+
+  function connectParticles() {
+    for(let i=0;i<particleCount;i++){
+      for(let j=i+1;j<particleCount;j++){
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if(dist < 120){
+          ctx.beginPath();
+          ctx.strokeStyle = 'rgba(27, 59, 95, 0.2)';
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
     }
+  }
 
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI*2);
-        ctx.fillStyle = 'rgba(0,64,255,0.7)';
-        ctx.fill();
-        p.x += p.speedX;
-        p.y += p.speedY;
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
-      });
-      requestAnimationFrame(animate);
-    }
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
 
-    animate();
-  </script>
+  animate();
+</script>
 </body>
 </html><!DOCTYPE html>
 <html lang="es">
