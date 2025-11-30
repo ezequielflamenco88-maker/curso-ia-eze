@@ -5,14 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Curso Profesional de IA</title>
 <style>
-  /* Fondo cibernético con partículas */
   body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #eaf6ff, #ffffff);
     overflow: hidden;
     color: #0d1b2a;
   }
+
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
   canvas {
     position: fixed;
@@ -29,11 +30,13 @@
   }
 
   h1 {
-    font-size: 4em;
+    font-size: 4.5em;
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 0.5em;
-    color: #0d1b2a;
+    background: linear-gradient(90deg, #1b3b5f, #3b7a9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   h2 {
@@ -83,79 +86,96 @@
   <h2>Genera ingresos y domina la inteligencia artificial</h2>
   <div class="subtitle">Aprende paso a paso a crear cursos y apps rentables usando IA</div>
   <button class="button">Comenzar Curso</button>
-
   <div class="placeholder">Espacio para imagen o video de presentación del curso</div>
 </div>
 
 <script>
-  const canvas = document.getElementById('bgCanvas');
-  const ctx = canvas.getContext('2d');
-  let width = canvas.width = window.innerWidth;
-  let height = canvas.height = window.innerHeight;
+const canvas = document.getElementById('bgCanvas');
+const ctx = canvas.getContext('2d');
+let width = canvas.width = window.innerWidth;
+let height = canvas.height = window.innerHeight;
 
-  const particles = [];
-  const particleCount = 100;
+const particles = [];
+const particleCount = 120;
+const mouse = { x: null, y: null };
 
-  function Particle() {
-    this.x = Math.random() * width;
-    this.y = Math.random() * height;
-    this.vx = (Math.random() - 0.5) * 0.5;
-    this.vy = (Math.random() - 0.5) * 0.5;
-    this.radius = Math.random() * 2 + 1;
+window.addEventListener('mousemove', e => {
+  mouse.x = e.x;
+  mouse.y = e.y;
+});
+
+function Particle() {
+  this.x = Math.random() * width;
+  this.y = Math.random() * height;
+  this.vx = (Math.random() - 0.5) * 0.5;
+  this.vy = (Math.random() - 0.5) * 0.5;
+  this.radius = Math.random() * 2 + 1;
+}
+
+Particle.prototype.draw = function() {
+  ctx.beginPath();
+  ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2);
+  ctx.fillStyle = 'rgba(27, 59, 95, 0.8)';
+  ctx.fill();
+}
+
+Particle.prototype.update = function() {
+  this.x += this.vx;
+  this.y += this.vy;
+
+  // Rebote en los bordes
+  if(this.x < 0 || this.x > width) this.vx *= -1;
+  if(this.y < 0 || this.y > height) this.vy *= -1;
+
+  // Cercanía al mouse
+  if(mouse.x && mouse.y){
+    const dx = this.x - mouse.x;
+    const dy = this.y - mouse.y;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    if(dist < 100){
+      this.x += dx/20;
+      this.y += dy/20;
+    }
   }
+}
 
-  Particle.prototype.draw = function() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2);
-    ctx.fillStyle = 'rgba(27, 59, 95, 0.7)';
-    ctx.fill();
-  }
+for(let i=0;i<particleCount;i++){
+  particles.push(new Particle());
+}
 
-  Particle.prototype.update = function() {
-    this.x += this.vx;
-    this.y += this.vy;
+function animate() {
+  ctx.clearRect(0,0,width,height);
+  particles.forEach(p => {
+    p.update();
+    p.draw();
+  });
+  connectParticles();
+  requestAnimationFrame(animate);
+}
 
-    if(this.x < 0 || this.x > width) this.vx *= -1;
-    if(this.y < 0 || this.y > height) this.vy *= -1;
-  }
-
+function connectParticles() {
   for(let i=0;i<particleCount;i++){
-    particles.push(new Particle());
-  }
-
-  function animate() {
-    ctx.clearRect(0,0,width,height);
-    particles.forEach(p => {
-      p.update();
-      p.draw();
-    });
-    connectParticles();
-    requestAnimationFrame(animate);
-  }
-
-  function connectParticles() {
-    for(let i=0;i<particleCount;i++){
-      for(let j=i+1;j<particleCount;j++){
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        if(dist < 120){
-          ctx.beginPath();
-          ctx.strokeStyle = 'rgba(27, 59, 95, 0.2)';
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.stroke();
-        }
+    for(let j=i+1;j<particleCount;j++){
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if(dist < 120){
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(27, 59, 95, 0.2)';
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.stroke();
       }
     }
   }
+}
 
-  window.addEventListener('resize', () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-  });
+window.addEventListener('resize', () => {
+  width = canvas.width = window.innerWidth;
+  height = canvas.height = window.innerHeight;
+});
 
-  animate();
+animate();
 </script>
 </body>
 </html><!DOCTYPE html>
