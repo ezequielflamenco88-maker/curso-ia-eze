@@ -5,102 +5,136 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Curso Profesional: IA y Generación de Ingresos</title>
 <style>
-  /* Estilo general */
+  /* Tipografía futurista */
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;500&display=swap');
+
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f4f7fc; /* fondo claro y suave */
-    color: #1a1a1a; /* texto oscuro para buena lectura */
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #f0f4f8; /* Fondo claro y cómodo */
+    color: #111;
   }
 
-  /* Header / Carátula */
+  /* Header futurista */
   header {
-    background: linear-gradient(135deg, #8ab6d6, #c0d6e4); /* degradado elegante y futurista */
+    background: linear-gradient(135deg, #6a5af9, #3fd1fc); /* degradado IA */
     text-align: center;
-    padding: 60px 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.05),
+      rgba(255,255,255,0.05) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+    animation: slide 10s linear infinite;
+    z-index: 0;
+  }
+
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50%); }
   }
 
   header h1 {
-    font-size: 3em;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4em;
     margin: 0;
-    color: #0d1b2a; /* elegante, visible */
+    color: #ffffff;
+    z-index: 1;
+    position: relative;
   }
 
   header p {
-    font-size: 1.2em;
-    margin-top: 10px;
-    color: #1a2930;
+    font-size: 1.3em;
+    margin-top: 15px;
+    color: #e0e0e0;
+    z-index: 1;
+    position: relative;
   }
 
-  /* Botón principal */
   .btn-start {
     display: inline-block;
     margin-top: 30px;
-    padding: 15px 30px;
+    padding: 18px 36px;
     font-size: 1.2em;
     font-weight: bold;
-    color: #ffffff;
-    background-color: #4a90e2; /* azul futurista pero elegante */
-    border-radius: 8px;
+    color: #0d1b2a;
+    background-color: #00f0ff; /* azul cibernético */
+    border-radius: 12px;
     text-decoration: none;
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 1;
+    position: relative;
   }
 
   .btn-start:hover {
-    background-color: #357ABD;
-    transform: translateY(-3px);
+    background-color: #00c4d6;
+    transform: translateY(-3px) scale(1.05);
   }
 
-  /* Sección de bienvenida */
+  /* Sección de introducción */
   .intro {
-    max-width: 900px;
-    margin: 40px auto;
+    max-width: 1000px;
+    margin: 50px auto;
     padding: 0 20px;
     text-align: center;
   }
 
   .intro h2 {
-    font-size: 2em;
-    color: #0d1b2a;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5em;
+    color: #1a1a1a;
     margin-bottom: 20px;
   }
 
   .intro p {
-    font-size: 1.1em;
+    font-size: 1.2em;
     line-height: 1.6;
-    color: #1a2930;
+    color: #2a2a2a;
   }
 
-  /* Placeholder para imágenes/videos */
+  /* Placeholders para multimedia */
   .placeholder {
-    margin: 30px auto;
-    padding: 60px 20px;
-    background: #e0e7ef; /* bloque suave claro */
-    color: #4a4a4a;
-    border-radius: 10px;
+    margin: 40px auto;
+    padding: 80px 20px;
+    background: #e3ecf9; 
+    color: #555;
+    border-radius: 15px;
     text-align: center;
     font-style: italic;
-    font-size: 1em;
+    font-size: 1.1em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Curso Profesional: IA y Generación de Ingresos</h1>
-  <p>Aprende a aprovechar la inteligencia artificial para crear cursos, aplicaciones y generar ingresos reales</p>
+  <h1>Curso IA y Generación de Ingresos</h1>
+  <p>Aprende a dominar la inteligencia artificial para crear cursos, apps y generar ingresos reales</p>
   <a href="#modulo1" class="btn-start">Comenzar Curso</a>
 </header>
 
 <section class="intro" id="modulo1">
-  <h2>Bienvenido al curso</h2>
-  <p>En este curso aprenderás desde cero cómo usar la IA para generar contenido educativo, aplicaciones y estrategias de monetización. Todo explicado paso a paso, con ejercicios prácticos y recursos multimedia.</p>
+  <h2>Bienvenido al Futuro</h2>
+  <p>En este curso aprenderás paso a paso cómo aprovechar la IA para generar contenido educativo, aplicaciones digitales y estrategias de monetización. Todo explicado con claridad y ejercicios prácticos.</p>
 </section>
 
-<div class="placeholder">Aquí irá una imagen o infografía de bienvenida</div>
-<div class="placeholder">Aquí irá un video introductorio</div>
+<div class="placeholder">Aquí irá una imagen futurista de IA o infografía</div>
+<div class="placeholder">Aquí irá un video introductorio sobre el curso</div>
 
 </body>
 </html><!DOCTYPE html>
