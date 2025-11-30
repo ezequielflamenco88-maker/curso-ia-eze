@@ -2,278 +2,192 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Curso Profesional de IA</title>
 <style>
-  body {
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    background: linear-gradient(135deg, #eaf6ff, #ffffff);
-    overflow: hidden;
-    color: #0d1b2a;
-  }
+/* Reset básico */
+* {margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif;}
 
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+/* Cuerpo y fondo cibernético */
+body, html {
+  height: 100%;
+  background: #f0f4f8;
+  overflow: hidden;
+}
 
-  canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 0;
-  }
+/* Canvas para partículas */
+#backgroundCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
 
-  .container {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 15vh 5vw;
-  }
+/* Slides */
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  color: #111;
+  overflow-y: auto;
+}
 
-  h1 {
-    font-size: 4.5em;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 0.5em;
-    background: linear-gradient(90deg, #1b3b5f, #3b7a9d);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+/* Slide activo */
+.active {
+  display: block;
+}
 
-  h2 {
-    font-size: 2em;
-    font-weight: 500;
-    margin-bottom: 1em;
-    color: #1b3b5f;
-  }
+/* Portada */
+.portada h1 {
+  font-size: 4em;
+  color: #0a3d62;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  .subtitle {
-    font-size: 1.2em;
-    color: #2a4d69;
-    margin-bottom: 3em;
-  }
+.portada h2 {
+  font-size: 2em;
+  color: #1e3799;
+  text-align: center;
+  margin-bottom: 50px;
+}
 
-  .button {
-    background: linear-gradient(90deg, #1b3b5f, #3b7a9d);
-    color: white;
-    padding: 1em 2em;
-    border: none;
-    border-radius: 12px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
-  }
+.portada p {
+  text-align: center;
+  font-size: 1.2em;
+  color: #222;
+}
 
-  .button:hover {
-    transform: scale(1.1);
-    background: linear-gradient(90deg, #3b7a9d, #1b3b5f);
-  }
+/* Botones de navegación */
+button {
+  background-color: #1e3799;
+  color: #fff;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1em;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
 
-  .placeholder {
-    margin-top: 3em;
-    padding: 2em;
-    border: 2px dashed #1b3b5f;
-    border-radius: 12px;
-    color: #1b3b5f;
-    font-style: italic;
-  }
+button:hover {
+  background-color: #3c6382;
+}
+
+/* Contenido Módulo 1 */
+.modulo h2 {
+  font-size: 2.5em;
+  color: #0a3d62;
+  margin-bottom: 20px;
+}
+
+.modulo p {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  line-height: 1.5em;
+}
+
+.placeholder {
+  background-color: #dcdde1;
+  border: 2px dashed #7f8fa6;
+  padding: 30px;
+  text-align: center;
+  margin: 20px 0;
+  font-style: italic;
+  color: #2f3640;
+}
 </style>
 </head>
 <body>
-<canvas id="bgCanvas"></canvas>
 
-<div class="container">
+<canvas id="backgroundCanvas"></canvas>
+
+<!-- Portada -->
+<div class="slide active portada">
   <h1>Curso Profesional de IA</h1>
-  <h2>Genera ingresos y domina la inteligencia artificial</h2>
-  <div class="subtitle">Aprende paso a paso a crear cursos y apps rentables usando IA</div>
-  <button class="button">Comenzar Curso</button>
-  <div class="placeholder">Espacio para imagen o video de presentación del curso</div>
+  <h2>Creación de Cursos y Apps Online con Inteligencia Artificial</h2>
+  <p>Aprende a generar ingresos usando IA de manera creativa y profesional.</p>
+  <div style="text-align:center;">
+    <button onclick="nextSlide()">Comenzar</button>
+  </div>
 </div>
 
-<script>
-const canvas = document.getElementById('bgCanvas');
-const ctx = canvas.getContext('2d');
-let width = canvas.width = window.innerWidth;
-let height = canvas.height = window.innerHeight;
-
-const particles = [];
-const particleCount = 120;
-const mouse = { x: null, y: null };
-
-window.addEventListener('mousemove', e => {
-  mouse.x = e.x;
-  mouse.y = e.y;
-});
-
-function Particle() {
-  this.x = Math.random() * width;
-  this.y = Math.random() * height;
-  this.vx = (Math.random() - 0.5) * 0.5;
-  this.vy = (Math.random() - 0.5) * 0.5;
-  this.radius = Math.random() * 2 + 1;
-}
-
-Particle.prototype.draw = function() {
-  ctx.beginPath();
-  ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2);
-  ctx.fillStyle = 'rgba(27, 59, 95, 0.8)';
-  ctx.fill();
-}
-
-Particle.prototype.update = function() {
-  this.x += this.vx;
-  this.y += this.vy;
-
-  // Rebote en los bordes
-  if(this.x < 0 || this.x > width) this.vx *= -1;
-  if(this.y < 0 || this.y > height) this.vy *= -1;
-
-  // Cercanía al mouse
-  if(mouse.x && mouse.y){
-    const dx = this.x - mouse.x;
-    const dy = this.y - mouse.y;
-    const dist = Math.sqrt(dx*dx + dy*dy);
-    if(dist < 100){
-      this.x += dx/20;
-      this.y += dy/20;
-    }
-  }
-}
-
-for(let i=0;i<particleCount;i++){
-  particles.push(new Particle());
-}
-
-function animate() {
-  ctx.clearRect(0,0,width,height);
-  particles.forEach(p => {
-    p.update();
-    p.draw();
-  });
-  connectParticles();
-  requestAnimationFrame(animate);
-}
-
-function connectParticles() {
-  for(let i=0;i<particleCount;i++){
-    for(let j=i+1;j<particleCount;j++){
-      const dx = particles[i].x - particles[j].x;
-      const dy = particles[i].y - particles[j].y;
-      const dist = Math.sqrt(dx*dx + dy*dy);
-      if(dist < 120){
-        ctx.beginPath();
-        ctx.strokeStyle = 'rgba(27, 59, 95, 0.2)';
-        ctx.moveTo(particles[i].x, particles[i].y);
-        ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.stroke();
-      }
-    }
-  }
-}
-
-window.addEventListener('resize', () => {
-  width = canvas.width = window.innerWidth;
-  height = canvas.height = window.innerHeight;
-});
-
-animate();
-</script>
-</body>
-</html><!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Curso Profesional: IA y Generación de Ingresos</title>
-  <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
-    h1, h2, h3 { color: #2c3e50; }
-    .placeholder { border: 2px dashed #7f8c8d; padding: 20px; text-align: center; margin: 15px 0; }
-    .exercise { background: #ecf0f1; padding: 15px; margin: 15px 0; }
-    .note { color: #c0392b; font-weight: bold; }
-  </style>
-</head>
-<body>
-
-  <h1>Curso Profesional: Creación de Cursos y Apps Online con IA</h1>
+<!-- Módulo 1 -->
+<div class="slide modulo">
   <h2>Módulo 1 – Fundamentos de la IA aplicada a educación y generación de ingresos</h2>
-
-  <h3>1.1 Introducción a la IA en educación y emprendimiento digital</h3>
   <p>La Inteligencia Artificial (IA) simula la inteligencia humana para automatizar tareas, generar contenido y potenciar la creatividad. En educación, permite crear cursos y apps personalizadas, optimizando tiempo y esfuerzo. En emprendimiento digital, se convierte en una herramienta para generar ingresos, mejorar procesos y ofrecer productos innovadores.</p>
-
+  
+  <p><strong>Conceptos clave:</strong></p>
   <ul>
     <li>IA generativa: textos, imágenes, videos, música, código.</li>
     <li>Automatización: ahorro de tiempo y esfuerzo.</li>
     <li>Creatividad asistida: generación de ideas, guiones y diseños.</li>
   </ul>
 
-  <p><strong>Referencias académicas:</strong></p>
-  <ul>
-    <li>Russell, S., & Norvig, P. (2016). <em>Artificial Intelligence: A Modern Approach</em>.</li>
-    <li>UNESCO (2021). <em>Pedagogía de la Tecnología Educativa</em>.</li>
-    <li>Anderson, T. (2016). <em>The Theory and Practice of Online Learning</em>.</li>
-  </ul>
+  <div class="placeholder">Aquí se agregará infografía o imagen ilustrativa</div>
+  <div class="placeholder">Aquí se agregará video de ejemplo</div>
 
-  <h3>1.2 Ejemplo práctico paso a paso</h3>
-  <ol>
-    <li>Abrir ChatGPT u otra IA de texto.</li>
-    <li>Escribir prompt: "Genera 10 ideas para un curso online sobre productividad usando IA".</li>
-    <li>Copiar las ideas en un documento organizado.</li>
-    <li>Crear carpetas <code>img</code> y <code>videos</code> para recursos multimedia.</li>
-    <li>Dejar vacíos para imágenes y videos: cuadros de texto o comentarios indicando dónde se insertarán recursos.</li>
-  </ol>
-
-  <div class="exercise">
-    <strong>Mini-ejercicio:</strong> Seleccionar 5 ideas y definir la principal. Guardar captura de pantalla de la IA mostrando las ideas.
-    <p class="note">Escenario de error: la IA devuelve ideas repetidas → refinar prompt con "Ideas originales y distintas para principiantes".</p>
+  <div style="text-align:center;">
+    <button onclick="prevSlide()">Volver</button>
+    <button onclick="nextSlide()">Siguiente Módulo</button>
   </div>
+</div>
 
-  <h3>1.3 Conceptos técnicos y prácticos</h3>
-  <p><strong>Archivos y estructura:</strong></p>
-  <ul>
-    <li>Carpeta principal: <code>MisCursosIA</code></li>
-    <li>Subcarpetas: <code>img</code> (imágenes), <code>videos</code> (videos)</li>
-    <li>Archivo principal: <code>index.html</code> → importante: el navegador lo reconoce como página principal automáticamente.</li>
-  </ul>
+<script>
+// Gestión de slides
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
 
-  <p><strong>Tip:</strong> usar nombres sin espacios, en minúsculas y con extensión <code>.html</code> para evitar errores.</p>
+function showSlide(index) {
+  slides.forEach((s, i) => s.classList.remove('active'));
+  slides[index].classList.add('active');
+  currentSlide = index;
+}
 
-  <p><strong>Ejemplo de HTML básico:</strong></p>
-  <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Curso de IA&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Mi Curso de IA&lt;/h1&gt;
-  &lt;h2&gt;Módulo 1 – Fundamentos&lt;/h2&gt;
-  &lt;p&gt;Texto generado por IA...&lt;/p&gt;
-  &lt;div class="placeholder"&gt;Imagen o infografía aquí&lt;/div&gt;
-  &lt;div class="placeholder"&gt;Video aquí&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-  </pre>
+function nextSlide() {
+  if (currentSlide < slides.length - 1) showSlide(currentSlide + 1);
+}
 
-  <h3>1.4 Escenarios de error comunes</h3>
-  <ul>
-    <li>Archivo no se abre en navegador → verificar extensión <code>.html</code> y ruta correcta.</li>
-    <li>Imagen o video no carga → revisar nombres exactos y formatos (.png, .jpg, .mp4).</li>
-    <li>Texto desordenado → revisar que el código HTML tenga estructura correcta.</li>
-  </ul>
+function prevSlide() {
+  if (currentSlide > 0) showSlide(currentSlide - 1);
+}
 
-  <h3>1.5 Ejercicio completo del módulo</h3>
-  <ol>
-    <li>Abrir IA y generar 10 ideas de cursos sobre IA y monetización.</li>
-    <li>Seleccionar 5 ideas y definir la principal.</li>
-    <li>Crear carpeta principal y subcarpetas.</li>
-    <li>Crear <code>index.html</code> con estructura básica.</li>
-    <li>Insertar cuadros de vacío donde irán imágenes y videos.</li>
-    <li>Guardar captura de pantalla y documentación de proceso.</li>
-  </ol>
+// Fondo de partículas simple
+const canvas = document.getElementById('backgroundCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-  <p><strong>Optimización de creatividad:</strong> combinar prompts distintos para obtener ideas originales. Ajustar colores, estilos y formatos de imágenes para público objetivo.</p>
+let particles = [];
+for (let i = 0; i < 80; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 2 + 1,
+    dx: (Math.random() - 0.5) * 0.5,
+    dy: (Math.random() - 0.5) * 0.5
+  });
+}
 
-  <p><strong>Resultado esperado:</strong> Idea de curso principal definida. Carpeta y archivo <code>index.html</code> listos con vacíos para multimedia. Primer paso completo para construir el curso profesional.</p>
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    p.x += p.dx;
+    p.y += p.dy;
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+    ctx.fillStyle = "#1e3799";
+    ctx.fill();
+  });
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
 
 </body>
 </html>
