@@ -2,204 +2,143 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Mapa Conceptual Proyecto LUMINA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyecto LUMINA</title>
 <style>
-  body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background-color: #f9f9f9; }
-  h1, h2, h3, h4 { margin: 10px 0; }
-  ul { list-style-type: square; margin-left: 20px; }
-  li { margin: 5px 0; }
-  .part { background-color: #e0f7fa; padding: 10px; border-radius: 6px; margin-bottom: 15px; }
-  .step { background-color: #ffffff; padding: 8px; border-radius: 6px; margin-bottom: 8px; }
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif; }
+  body { background: linear-gradient(135deg, #1f1c2c, #928dab); color: #fff; overflow-x: hidden; }
+  section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 50px; transition: transform 1s ease, opacity 1s ease; opacity: 0; transform: translateY(50px); }
+  section.active { opacity: 1; transform: translateY(0); }
+  h1, h2 { margin-bottom: 20px; text-align: center; }
+  h1 { font-size: 3em; text-transform: uppercase; letter-spacing: 2px; }
+  h2 { font-size: 2em; }
+  p, li { font-size: 1.2em; line-height: 1.6; margin-bottom: 15px; max-width: 800px; text-align: left; }
+  ul { margin-bottom: 20px; padding-left: 20px; }
+  li { margin-bottom: 10px; }
+  .slide-background { position: absolute; top:0; left:0; width:100%; height:100%; z-index:-1; background: radial-gradient(circle at center, rgba(255,255,255,0.05), transparent 70%); animation: bgMove 20s linear infinite; }
+  @keyframes bgMove {
+    0% { background-position: 0 0; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0 100%; }
+  }
+  .container { max-width: 1000px; margin: auto; }
+  .highlight { color: #ffdd57; font-weight: bold; }
 </style>
 </head>
 <body>
 
-<h1>Proyecto LUMINA – Mapa Conceptual</h1>
+<div class="slide-background"></div>
 
-<div class="part">
-  <h2>PARTE 1: Diagnóstico y planificación</h2>
-  <div class="step">
-    <h3>1. Administración</h3>
-    <ul>
-      <li>Revisar tipos de informes que se generan (administrativos, pagos, agendas)</li>
-      <li>Listar tareas repetitivas y problemáticas</li>
-      <li>Identificar problemas comunes: errores, duplicaciones, retrasos</li>
-      <li>Priorizar tareas que se pueden automatizar con IA</li>
-      <li>Ejemplo de prompt: "Redactame un resumen diario de la agenda administrativa con estos datos: [lista de citas]"</li>
-    </ul>
+<section class="active">
+  <div class="container">
+    <h1>LUMINA</h1>
+    <p>Proyecto de aplicación práctica de Inteligencia Artificial en clínicas, diseñado para mejorar eficiencia, estandarización de procesos y capacitación interna del personal.</p>
   </div>
-  <div class="step">
-    <h3>2. Médicos / Investigación</h3>
-    <ul>
-      <li>Revisar flujo de redacción de informes clínicos</li>
-      <li>Identificar tareas lentas: protocolos, seguimiento de pacientes, revisiones</li>
-      <li>Detectar oportunidades para resumir información o generar informes automáticos</li>
-      <li>Ejemplo de prompt: "Resumí la historia clínica del paciente X destacando diagnósticos, medicación y próximos pasos"</li>
-    </ul>
-  </div>
-  <div class="step">
-    <h3>3. Enfermería / Atención al paciente</h3>
-    <ul>
-      <li>Revisar organización de turnos y asignación de tareas</li>
-      <li>Detectar problemas de comunicación con médicos y pacientes</li>
-      <li>Identificar tareas repetitivas: reportes de turno, seguimiento de pacientes</li>
-      <li>Ejemplo de prompt: "Generá un resumen del turno de enfermería con tareas completadas y pendientes"</li>
-    </ul>
-  </div>
-  <div class="step">
-    <h3>4. Mantenimiento / Logística</h3>
-    <ul>
-      <li>Revisar control de insumos y stock</li>
-      <li>Listar tareas de mantenimiento preventivo y correctivo</li>
-      <li>Detectar prioridades y cuellos de botella</li>
-      <li>Ejemplo de prompt: "Listá los insumos que necesitan reposición y organizalos por urgencia y área"</li>
-    </ul>
-  </div>
-  <div class="step">
-    <h3>5. Marketing / Comunicación interna</h3>
-    <ul>
-      <li>Revisar comunicación con pacientes y personal</li>
-      <li>Listar tareas repetitivas: emails, recordatorios, posts educativos</li>
-      <li>Identificar problemas en coordinación de campañas</li>
-      <li>Ejemplo de prompt: "Redactame un email recordando la campaña de vacunación a todos los pacientes con tono amable y profesional"</li>
-    </ul>
-  </div>
-  <div class="step">
-    <h3>Planificación general</h3>
-    <ul>
-      <li>Definir objetivos medibles del proyecto</li>
-      <li>Priorizar áreas y tareas para impacto rápido</li>
-      <li>Crear plan de acción inicial con tiempos</li>
-    </ul>
-  </div>
-</div>
+</section>
 
-<div class="part">
-  <h2>PARTE 2: Desarrollo de demos funcionales</h2>
-  <div class="step">
-    <h3>1. Selección de demos</h3>
+<section>
+  <div class="container">
+    <h2>1️⃣ Descripción general</h2>
     <ul>
-      <li>Elegir 5 demos prioritarios por área</li>
-      <li>Asignar responsable de cada demo</li>
+      <li>Reducir tareas repetitivas y tiempo de procesamiento.</li>
+      <li>Estandarizar información y procesos.</li>
+      <li>Capacitar al personal mediante un curso interno.</li>
+      <li>Permitir replicación global y escalabilidad dentro de la clínica.</li>
     </ul>
+    <p>Se estructura en demos piloto en Administración, Enfermería y Mantenimiento/Logística, incluyendo prompts, resultados y guías. Seguridad de datos garantizada: sin acceso a bases de datos reales.</p>
   </div>
-  <div class="step">
-    <h3>2. Creación de prompts y plantillas</h3>
-    <ul>
-      <li>Redactar prompt base para cada demo</li>
-      <li>Probar con ejemplos simulados</li>
-      <li>Ajustar para claridad y consistencia</li>
-      <li>Guardar plantillas finales</li>
-      <li>Ejemplos: informes administrativos, resúmenes de turno, mensajes a pacientes</li>
-    </ul>
-  </div>
-  <div class="step">
-    <h3>3. Pruebas de demos</h3>
-    <ul>
-      <li>Ejecutar demo en IA</li>
-      <li>Revisar resultados: profesionalismo, claridad, consistencia</li>
-      <li>Documentar ajustes y mejoras</li>
-    </ul>
-  </div>
-</div>
+</section>
 
-<div class="part">
-  <h2>PARTE 3: Curso interno profesional</h2>
-  <div class="step">
-    <h3>1. Diseño del curso</h3>
+<section>
+  <div class="container">
+    <h2>2️⃣ Confiabilidad</h2>
     <ul>
-      <li>Definir módulos y objetivos claros</li>
-      <li>Determinar público objetivo por área</li>
+      <li>Basado en procesos documentados y medibles.</li>
+      <li>Prompts probados, resultados y guías disponibles.</li>
+      <li>Control de calidad diario y semanal.</li>
+      <li>Riesgos identificados: errores de prompts, adaptación del personal, alertas incompletas, percepción de seguridad de datos.</li>
     </ul>
+    <p>Conclusión: Proyecto confiable si se siguen los controles y se ejecuta correctamente.</p>
   </div>
-  <div class="step">
-    <h3>2. Contenido teórico</h3>
-    <ul>
-      <li>Qué es IA y cómo funciona</li>
-      <li>Privacidad y buenas prácticas</li>
-      <li>Aplicación práctica de IA en cada área</li>
-      <li>Ejemplos prácticos con prompts y plantillas</li>
-    </ul>
-  </div>
-  <div class="step">
-    <h3>3. Ejercicios prácticos</h3>
-    <ul>
-      <li>Crear ejercicios usando los demos</li>
-      <li>Redactar instrucciones paso a paso</li>
-      <li>Incluir corrección de errores y ajuste de prompts</li>
-    </ul>
-  </div>
-  <div class="step">
-    <h3>4. Materiales de soporte</h3>
-    <ul>
-      <li>PDFs y plantillas de prompts</li>
-      <li>Diapositivas con ejemplos visuales</li>
-      <li>Guías paso a paso para el personal</li>
-    </ul>
-  </div>
-</div>
+</section>
 
-<div class="part">
-  <h2>PARTE 4: Implementación piloto</h2>
-  <div class="step">
-    <h3>Preparación</h3>
+<section>
+  <div class="container">
+    <h2>3️⃣ Productividad</h2>
     <ul>
-      <li>Seleccionar área piloto</li>
-      <li>Capacitar al personal con curso y plantillas</li>
+      <li>Reducción de tiempo y errores desde el primer piloto.</li>
+      <li>Automatiza tareas simples y repetitivas.</li>
+      <li>Mejora estandarización de documentos y procesos.</li>
+      <li>Capacitación interna asegura uso consistente de la IA.</li>
     </ul>
+    <p>Conclusión: Muy productivo en eficiencia operativa, depende de adopción del personal.</p>
   </div>
-  <div class="step">
-    <h3>Ejecutar demos</h3>
-    <ul>
-      <li>Aplicar demos en tareas reales</li>
-      <li>Medir resultados: tiempo, calidad, errores, comunicación</li>
-    </ul>
-  </div>
-  <div class="step">
-    <h3>Ajustes</h3>
-    <ul>
-      <li>Corregir prompts según feedback</li>
-      <li>Modificar plantillas si es necesario</li>
-      <li>Documentar resultados finales</li>
-    </ul>
-  </div>
-</div>
+</section>
 
-<div class="part">
-  <h2>PARTE 5: Implementación completa y escalable</h2>
-  <div class="step">
-    <h3>Planificación</h3>
+<section>
+  <div class="container">
+    <h2>4️⃣ Rentabilidad financiera</h2>
     <ul>
-      <li>Definir rollout por áreas según prioridades</li>
-      <li>Programar capacitaciones y seguimiento</li>
+      <li>Ahorro directo: horas de trabajo administrativo y reducción de errores.</li>
+      <li>Valor agregado indirecto: organización, informes precisos, replicable.</li>
+      <li>Inversión: tiempo en preparación y creación de demos/curso interno.</li>
     </ul>
+    <p>Conclusión: Proyecto rentable, retorno visible desde primer piloto, bajo costo y alto valor agregado.</p>
   </div>
-  <div class="step">
-    <h3>Ejecución</h3>
-    <ul>
-      <li>Aplicar curso y demos a todo el personal</li>
-      <li>Monitorear desempeño y uso de IA</li>
-    </ul>
-  </div>
-  <div class="step">
-    <h3>Seguimiento</h3>
-    <ul>
-      <li>Actualizar prompts y plantillas según cambios</li>
-      <li>Registrar métricas de impacto y mejoras</li>
-    </ul>
-  </div>
-</div>
+</section>
 
-<div class="part">
-  <h2>PARTE 6: Seguimiento y optimización</h2>
-  <ul>
-    <li>Revisar periódicamente prompts y plantillas</li>
-    <li>Ajustar según cambios en procesos o necesidades</li>
-    <li>Registrar métricas de impacto</li>
-    <li>Actualizar curso interno con nuevas prácticas</li>
-    <li>Mantener guía de buenas prácticas para nuevos empleados</li>
-  </ul>
-</div>
+<section>
+  <div class="container">
+    <h2>5️⃣ Innovación e impacto institucional</h2>
+    <ul>
+      <li>Innovador: pocas clínicas aplican IA estructurada y documentada.</li>
+      <li>Impacto interno: mejor comunicación, estandarización, escalabilidad.</li>
+      <li>Impacto externo: reputación moderna y tecnológica.</li>
+    </ul>
+    <p>Conclusión: Alto impacto operativo y estratégico.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>6️⃣ Limitaciones objetivas</h2>
+    <ul>
+      <li>Depende del compromiso del personal en usar herramientas y guías.</li>
+      <li>IA no reemplaza decisiones médicas ni análisis crítico humano.</li>
+      <li>Mantenimiento constante de prompts e información simulada.</li>
+      <li>Alcance global requiere adaptación a regulaciones locales.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>7️⃣ Clasificación final</h2>
+    <ul>
+      <li>Confiabilidad: <span class="highlight">Alta</span></li>
+      <li>Rentabilidad: <span class="highlight">Alta</span></li>
+      <li>Productividad: <span class="highlight">Alta</span></li>
+      <li>Innovación: <span class="highlight">Alta</span></li>
+      <li>Impacto institucional: <span class="highlight">Alto</span></li>
+      <li>Riesgos: <span class="highlight">Moderados</span></li>
+    </ul>
+    <p>Conclusión general: Proyecto sólido, confiable y rentable, aplicable globalmente, con resultados visibles desde el primer piloto.</p>
+  </div>
+</section>
+
+<script>
+  // Animación de entrada de secciones
+  const sections = document.querySelectorAll('section');
+  let observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('active');
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(section => { observer.observe(section); });
+</script>
 
 </body>
 </html>
