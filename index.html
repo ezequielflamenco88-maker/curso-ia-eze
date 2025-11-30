@@ -2,211 +2,204 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seguimiento de Proyecto: Curso de IA</title>
+<title>Mapa Conceptual Proyecto LUMINA</title>
 <style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom, #e0e7ff, #ffffff);
-    color: #1a1a1a;
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    background: #4f46e5;
-    color: #fff;
-    text-align: center;
-    padding: 2rem;
-    font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-  }
-  section {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: #f8f8ff;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  }
-  h2 {
-    color: #4f46e5;
-    border-bottom: 2px solid #4f46e5;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  label {
-    display: block;
-    margin-top: 1rem;
-    font-weight: bold;
-  }
-  input, textarea, select {
-    width: 100%;
-    padding: 0.8rem;
-    margin-top: 0.3rem;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    resize: vertical;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-  }
-  th, td {
-    border: 1px solid #ccc;
-    padding: 0.8rem;
-    text-align: left;
-  }
-  th {
-    background: #e0e7ff;
-    color: #1a1a1a;
-  }
-  .placeholder {
-    background: #d1d5db;
-    color: #6b7280;
-    text-align: center;
-    padding: 1rem;
-    border-radius: 8px;
-    margin-top: 1rem;
-    font-style: italic;
-  }
-  button {
-    background: #4f46e5;
-    color: #fff;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    margin-top: 1rem;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: 0.3s;
-  }
-  button:hover {
-    background: #3730a3;
-  }
+  body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background-color: #f9f9f9; }
+  h1, h2, h3, h4 { margin: 10px 0; }
+  ul { list-style-type: square; margin-left: 20px; }
+  li { margin: 5px 0; }
+  .part { background-color: #e0f7fa; padding: 10px; border-radius: 6px; margin-bottom: 15px; }
+  .step { background-color: #ffffff; padding: 8px; border-radius: 6px; margin-bottom: 8px; }
 </style>
 </head>
 <body>
 
-<header>Seguimiento de Proyecto: Curso Profesional de IA</header>
+<h1>Proyecto LUMINA – Mapa Conceptual</h1>
 
-<section>
-  <h2>1. Información General</h2>
-  <label>Nombre del Proyecto:</label>
-  <input type="text" placeholder="Curso Profesional de IA">
-  
-  <label>Responsable:</label>
-  <input type="text" placeholder="Tu nombre">
-  
-  <label>Fecha de inicio:</label>
-  <input type="date">
-  
-  <label>Fecha estimada de finalización:</label>
-  <input type="date">
-</section>
+<div class="part">
+  <h2>PARTE 1: Diagnóstico y planificación</h2>
+  <div class="step">
+    <h3>1. Administración</h3>
+    <ul>
+      <li>Revisar tipos de informes que se generan (administrativos, pagos, agendas)</li>
+      <li>Listar tareas repetitivas y problemáticas</li>
+      <li>Identificar problemas comunes: errores, duplicaciones, retrasos</li>
+      <li>Priorizar tareas que se pueden automatizar con IA</li>
+      <li>Ejemplo de prompt: "Redactame un resumen diario de la agenda administrativa con estos datos: [lista de citas]"</li>
+    </ul>
+  </div>
+  <div class="step">
+    <h3>2. Médicos / Investigación</h3>
+    <ul>
+      <li>Revisar flujo de redacción de informes clínicos</li>
+      <li>Identificar tareas lentas: protocolos, seguimiento de pacientes, revisiones</li>
+      <li>Detectar oportunidades para resumir información o generar informes automáticos</li>
+      <li>Ejemplo de prompt: "Resumí la historia clínica del paciente X destacando diagnósticos, medicación y próximos pasos"</li>
+    </ul>
+  </div>
+  <div class="step">
+    <h3>3. Enfermería / Atención al paciente</h3>
+    <ul>
+      <li>Revisar organización de turnos y asignación de tareas</li>
+      <li>Detectar problemas de comunicación con médicos y pacientes</li>
+      <li>Identificar tareas repetitivas: reportes de turno, seguimiento de pacientes</li>
+      <li>Ejemplo de prompt: "Generá un resumen del turno de enfermería con tareas completadas y pendientes"</li>
+    </ul>
+  </div>
+  <div class="step">
+    <h3>4. Mantenimiento / Logística</h3>
+    <ul>
+      <li>Revisar control de insumos y stock</li>
+      <li>Listar tareas de mantenimiento preventivo y correctivo</li>
+      <li>Detectar prioridades y cuellos de botella</li>
+      <li>Ejemplo de prompt: "Listá los insumos que necesitan reposición y organizalos por urgencia y área"</li>
+    </ul>
+  </div>
+  <div class="step">
+    <h3>5. Marketing / Comunicación interna</h3>
+    <ul>
+      <li>Revisar comunicación con pacientes y personal</li>
+      <li>Listar tareas repetitivas: emails, recordatorios, posts educativos</li>
+      <li>Identificar problemas en coordinación de campañas</li>
+      <li>Ejemplo de prompt: "Redactame un email recordando la campaña de vacunación a todos los pacientes con tono amable y profesional"</li>
+    </ul>
+  </div>
+  <div class="step">
+    <h3>Planificación general</h3>
+    <ul>
+      <li>Definir objetivos medibles del proyecto</li>
+      <li>Priorizar áreas y tareas para impacto rápido</li>
+      <li>Crear plan de acción inicial con tiempos</li>
+    </ul>
+  </div>
+</div>
 
-<section>
-  <h2>2. Objetivo del Proyecto</h2>
-  <textarea rows="4" placeholder="Escribe aquí el objetivo principal del proyecto..."></textarea>
-</section>
+<div class="part">
+  <h2>PARTE 2: Desarrollo de demos funcionales</h2>
+  <div class="step">
+    <h3>1. Selección de demos</h3>
+    <ul>
+      <li>Elegir 5 demos prioritarios por área</li>
+      <li>Asignar responsable de cada demo</li>
+    </ul>
+  </div>
+  <div class="step">
+    <h3>2. Creación de prompts y plantillas</h3>
+    <ul>
+      <li>Redactar prompt base para cada demo</li>
+      <li>Probar con ejemplos simulados</li>
+      <li>Ajustar para claridad y consistencia</li>
+      <li>Guardar plantillas finales</li>
+      <li>Ejemplos: informes administrativos, resúmenes de turno, mensajes a pacientes</li>
+    </ul>
+  </div>
+  <div class="step">
+    <h3>3. Pruebas de demos</h3>
+    <ul>
+      <li>Ejecutar demo en IA</li>
+      <li>Revisar resultados: profesionalismo, claridad, consistencia</li>
+      <li>Documentar ajustes y mejoras</li>
+    </ul>
+  </div>
+</div>
 
-<section>
-  <h2>3. Público Objetivo</h2>
-  <textarea rows="3" placeholder="Describe el público objetivo y nivel de conocimiento previo..."></textarea>
-</section>
+<div class="part">
+  <h2>PARTE 3: Curso interno profesional</h2>
+  <div class="step">
+    <h3>1. Diseño del curso</h3>
+    <ul>
+      <li>Definir módulos y objetivos claros</li>
+      <li>Determinar público objetivo por área</li>
+    </ul>
+  </div>
+  <div class="step">
+    <h3>2. Contenido teórico</h3>
+    <ul>
+      <li>Qué es IA y cómo funciona</li>
+      <li>Privacidad y buenas prácticas</li>
+      <li>Aplicación práctica de IA en cada área</li>
+      <li>Ejemplos prácticos con prompts y plantillas</li>
+    </ul>
+  </div>
+  <div class="step">
+    <h3>3. Ejercicios prácticos</h3>
+    <ul>
+      <li>Crear ejercicios usando los demos</li>
+      <li>Redactar instrucciones paso a paso</li>
+      <li>Incluir corrección de errores y ajuste de prompts</li>
+    </ul>
+  </div>
+  <div class="step">
+    <h3>4. Materiales de soporte</h3>
+    <ul>
+      <li>PDFs y plantillas de prompts</li>
+      <li>Diapositivas con ejemplos visuales</li>
+      <li>Guías paso a paso para el personal</li>
+    </ul>
+  </div>
+</div>
 
-<section>
-  <h2>4. Estado de Avance General</h2>
-  <label>Portada:</label>
-  <select>
-    <option>Pendiente</option>
-    <option>En revisión</option>
-    <option>Completada</option>
-  </select>
-  
-  <label>Módulo 1:</label>
-  <select>
-    <option>Pendiente</option>
-    <option>En revisión</option>
-    <option>Completado</option>
-  </select>
-  
-  <label>Módulos 2-10:</label>
-  <select>
-    <option>Pendiente</option>
-    <option>En revisión</option>
-    <option>Parcial</option>
-    <option>Completado</option>
-  </select>
-  
-  <label>Publicación:</label>
-  <select>
-    <option>Pendiente</option>
-    <option>Preparado</option>
-    <option>Completado</option>
-  </select>
-</section>
+<div class="part">
+  <h2>PARTE 4: Implementación piloto</h2>
+  <div class="step">
+    <h3>Preparación</h3>
+    <ul>
+      <li>Seleccionar área piloto</li>
+      <li>Capacitar al personal con curso y plantillas</li>
+    </ul>
+  </div>
+  <div class="step">
+    <h3>Ejecutar demos</h3>
+    <ul>
+      <li>Aplicar demos en tareas reales</li>
+      <li>Medir resultados: tiempo, calidad, errores, comunicación</li>
+    </ul>
+  </div>
+  <div class="step">
+    <h3>Ajustes</h3>
+    <ul>
+      <li>Corregir prompts según feedback</li>
+      <li>Modificar plantillas si es necesario</li>
+      <li>Documentar resultados finales</li>
+    </ul>
+  </div>
+</div>
 
-<section>
-  <h2>5. Registro Diario de Avances</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Fecha</th>
-        <th>Tareas realizadas</th>
-        <th>Problemas encontrados</th>
-        <th>Soluciones aplicadas</th>
-        <th>Observaciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><input type="date"></td>
-        <td><input type="text" placeholder="Describe la tarea realizada"></td>
-        <td><input type="text" placeholder="Problemas encontrados"></td>
-        <td><input type="text" placeholder="Soluciones aplicadas"></td>
-        <td><input type="text" placeholder="Observaciones"></td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+<div class="part">
+  <h2>PARTE 5: Implementación completa y escalable</h2>
+  <div class="step">
+    <h3>Planificación</h3>
+    <ul>
+      <li>Definir rollout por áreas según prioridades</li>
+      <li>Programar capacitaciones y seguimiento</li>
+    </ul>
+  </div>
+  <div class="step">
+    <h3>Ejecución</h3>
+    <ul>
+      <li>Aplicar curso y demos a todo el personal</li>
+      <li>Monitorear desempeño y uso de IA</li>
+    </ul>
+  </div>
+  <div class="step">
+    <h3>Seguimiento</h3>
+    <ul>
+      <li>Actualizar prompts y plantillas según cambios</li>
+      <li>Registrar métricas de impacto y mejoras</li>
+    </ul>
+  </div>
+</div>
 
-<section>
-  <h2>6. Decisiones Estratégicas</h2>
-  <textarea rows="4" placeholder="Registra aquí todas las decisiones importantes sobre estilo, contenido y tecnología..."></textarea>
-</section>
-
-<section>
-  <h2>7. Recursos y Herramientas Utilizadas</h2>
-  <textarea rows="3" placeholder="Ej: ChatGPT, MidJourney, Canva, HTML, CSS, GitHub..."></textarea>
-</section>
-
-<section>
-  <h2>8. Problemas Frecuentes y Soluciones</h2>
-  <textarea rows="4" placeholder="Ej: archivos HTML no cargan → revisar extensión y ruta..."></textarea>
-</section>
-
-<section>
-  <h2>9. Notas de Creatividad y Optimización</h2>
-  <textarea rows="4" placeholder="Ideas para mejorar contenido, estética o innovación pedagógica..."></textarea>
-</section>
-
-<section>
-  <h2>10. Próximos Pasos</h2>
-  <textarea rows="3" placeholder="Describe los siguientes pasos del proyecto..."></textarea>
-</section>
-
-<section>
-  <h2>11. Evaluación del Proyecto</h2>
-  <textarea rows="3" placeholder="Nivel de cumplimiento de objetivos, innovación, calidad técnica, observaciones..."></textarea>
-</section>
-
-<button onclick="alert('Datos guardados localmente en el navegador. Para guardarlos permanentemente, copia y pega en un documento.')">Guardar Progreso</button>
-
-<div class="placeholder">Aquí podrías agregar un logo o imagen del proyecto</div>
+<div class="part">
+  <h2>PARTE 6: Seguimiento y optimización</h2>
+  <ul>
+    <li>Revisar periódicamente prompts y plantillas</li>
+    <li>Ajustar según cambios en procesos o necesidades</li>
+    <li>Registrar métricas de impacto</li>
+    <li>Actualizar curso interno con nuevas prácticas</li>
+    <li>Mantener guía de buenas prácticas para nuevos empleados</li>
+  </ul>
+</div>
 
 </body>
 </html>
