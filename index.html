@@ -2,192 +2,211 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Curso Profesional de IA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seguimiento de Proyecto: Curso de IA</title>
 <style>
-/* Reset básico */
-* {margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif;}
-
-/* Cuerpo y fondo cibernético */
-body, html {
-  height: 100%;
-  background: #f0f4f8;
-  overflow: hidden;
-}
-
-/* Canvas para partículas */
-#backgroundCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-/* Slides */
-.slide {
-  display: none;
-  width: 100%;
-  height: 100%;
-  padding: 50px;
-  color: #111;
-  overflow-y: auto;
-}
-
-/* Slide activo */
-.active {
-  display: block;
-}
-
-/* Portada */
-.portada h1 {
-  font-size: 4em;
-  color: #0a3d62;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.portada h2 {
-  font-size: 2em;
-  color: #1e3799;
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.portada p {
-  text-align: center;
-  font-size: 1.2em;
-  color: #222;
-}
-
-/* Botones de navegación */
-button {
-  background-color: #1e3799;
-  color: #fff;
-  border: none;
-  padding: 15px 25px;
-  font-size: 1em;
-  cursor: pointer;
-  margin: 10px;
-  border-radius: 8px;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background-color: #3c6382;
-}
-
-/* Contenido Módulo 1 */
-.modulo h2 {
-  font-size: 2.5em;
-  color: #0a3d62;
-  margin-bottom: 20px;
-}
-
-.modulo p {
-  font-size: 1.1em;
-  margin-bottom: 15px;
-  line-height: 1.5em;
-}
-
-.placeholder {
-  background-color: #dcdde1;
-  border: 2px dashed #7f8fa6;
-  padding: 30px;
-  text-align: center;
-  margin: 20px 0;
-  font-style: italic;
-  color: #2f3640;
-}
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #e0e7ff, #ffffff);
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background: #4f46e5;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  }
+  section {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #f8f8ff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  h2 {
+    color: #4f46e5;
+    border-bottom: 2px solid #4f46e5;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  input, textarea, select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.3rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    resize: vertical;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 0.8rem;
+    text-align: left;
+  }
+  th {
+    background: #e0e7ff;
+    color: #1a1a1a;
+  }
+  .placeholder {
+    background: #d1d5db;
+    color: #6b7280;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-style: italic;
+  }
+  button {
+    background: #4f46e5;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+  }
+  button:hover {
+    background: #3730a3;
+  }
 </style>
 </head>
 <body>
 
-<canvas id="backgroundCanvas"></canvas>
+<header>Seguimiento de Proyecto: Curso Profesional de IA</header>
 
-<!-- Portada -->
-<div class="slide active portada">
-  <h1>Curso Profesional de IA</h1>
-  <h2>Creación de Cursos y Apps Online con Inteligencia Artificial</h2>
-  <p>Aprende a generar ingresos usando IA de manera creativa y profesional.</p>
-  <div style="text-align:center;">
-    <button onclick="nextSlide()">Comenzar</button>
-  </div>
-</div>
-
-<!-- Módulo 1 -->
-<div class="slide modulo">
-  <h2>Módulo 1 – Fundamentos de la IA aplicada a educación y generación de ingresos</h2>
-  <p>La Inteligencia Artificial (IA) simula la inteligencia humana para automatizar tareas, generar contenido y potenciar la creatividad. En educación, permite crear cursos y apps personalizadas, optimizando tiempo y esfuerzo. En emprendimiento digital, se convierte en una herramienta para generar ingresos, mejorar procesos y ofrecer productos innovadores.</p>
+<section>
+  <h2>1. Información General</h2>
+  <label>Nombre del Proyecto:</label>
+  <input type="text" placeholder="Curso Profesional de IA">
   
-  <p><strong>Conceptos clave:</strong></p>
-  <ul>
-    <li>IA generativa: textos, imágenes, videos, música, código.</li>
-    <li>Automatización: ahorro de tiempo y esfuerzo.</li>
-    <li>Creatividad asistida: generación de ideas, guiones y diseños.</li>
-  </ul>
+  <label>Responsable:</label>
+  <input type="text" placeholder="Tu nombre">
+  
+  <label>Fecha de inicio:</label>
+  <input type="date">
+  
+  <label>Fecha estimada de finalización:</label>
+  <input type="date">
+</section>
 
-  <div class="placeholder">Aquí se agregará infografía o imagen ilustrativa</div>
-  <div class="placeholder">Aquí se agregará video de ejemplo</div>
+<section>
+  <h2>2. Objetivo del Proyecto</h2>
+  <textarea rows="4" placeholder="Escribe aquí el objetivo principal del proyecto..."></textarea>
+</section>
 
-  <div style="text-align:center;">
-    <button onclick="prevSlide()">Volver</button>
-    <button onclick="nextSlide()">Siguiente Módulo</button>
-  </div>
-</div>
+<section>
+  <h2>3. Público Objetivo</h2>
+  <textarea rows="3" placeholder="Describe el público objetivo y nivel de conocimiento previo..."></textarea>
+</section>
 
-<script>
-// Gestión de slides
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
+<section>
+  <h2>4. Estado de Avance General</h2>
+  <label>Portada:</label>
+  <select>
+    <option>Pendiente</option>
+    <option>En revisión</option>
+    <option>Completada</option>
+  </select>
+  
+  <label>Módulo 1:</label>
+  <select>
+    <option>Pendiente</option>
+    <option>En revisión</option>
+    <option>Completado</option>
+  </select>
+  
+  <label>Módulos 2-10:</label>
+  <select>
+    <option>Pendiente</option>
+    <option>En revisión</option>
+    <option>Parcial</option>
+    <option>Completado</option>
+  </select>
+  
+  <label>Publicación:</label>
+  <select>
+    <option>Pendiente</option>
+    <option>Preparado</option>
+    <option>Completado</option>
+  </select>
+</section>
 
-function showSlide(index) {
-  slides.forEach((s, i) => s.classList.remove('active'));
-  slides[index].classList.add('active');
-  currentSlide = index;
-}
+<section>
+  <h2>5. Registro Diario de Avances</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Tareas realizadas</th>
+        <th>Problemas encontrados</th>
+        <th>Soluciones aplicadas</th>
+        <th>Observaciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="date"></td>
+        <td><input type="text" placeholder="Describe la tarea realizada"></td>
+        <td><input type="text" placeholder="Problemas encontrados"></td>
+        <td><input type="text" placeholder="Soluciones aplicadas"></td>
+        <td><input type="text" placeholder="Observaciones"></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
 
-function nextSlide() {
-  if (currentSlide < slides.length - 1) showSlide(currentSlide + 1);
-}
+<section>
+  <h2>6. Decisiones Estratégicas</h2>
+  <textarea rows="4" placeholder="Registra aquí todas las decisiones importantes sobre estilo, contenido y tecnología..."></textarea>
+</section>
 
-function prevSlide() {
-  if (currentSlide > 0) showSlide(currentSlide - 1);
-}
+<section>
+  <h2>7. Recursos y Herramientas Utilizadas</h2>
+  <textarea rows="3" placeholder="Ej: ChatGPT, MidJourney, Canva, HTML, CSS, GitHub..."></textarea>
+</section>
 
-// Fondo de partículas simple
-const canvas = document.getElementById('backgroundCanvas');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+<section>
+  <h2>8. Problemas Frecuentes y Soluciones</h2>
+  <textarea rows="4" placeholder="Ej: archivos HTML no cargan → revisar extensión y ruta..."></textarea>
+</section>
 
-let particles = [];
-for (let i = 0; i < 80; i++) {
-  particles.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2 + 1,
-    dx: (Math.random() - 0.5) * 0.5,
-    dy: (Math.random() - 0.5) * 0.5
-  });
-}
+<section>
+  <h2>9. Notas de Creatividad y Optimización</h2>
+  <textarea rows="4" placeholder="Ideas para mejorar contenido, estética o innovación pedagógica..."></textarea>
+</section>
 
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => {
-    p.x += p.dx;
-    p.y += p.dy;
-    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-    ctx.fillStyle = "#1e3799";
-    ctx.fill();
-  });
-  requestAnimationFrame(animate);
-}
-animate();
-</script>
+<section>
+  <h2>10. Próximos Pasos</h2>
+  <textarea rows="3" placeholder="Describe los siguientes pasos del proyecto..."></textarea>
+</section>
+
+<section>
+  <h2>11. Evaluación del Proyecto</h2>
+  <textarea rows="3" placeholder="Nivel de cumplimiento de objetivos, innovación, calidad técnica, observaciones..."></textarea>
+</section>
+
+<button onclick="alert('Datos guardados localmente en el navegador. Para guardarlos permanentemente, copia y pega en un documento.')">Guardar Progreso</button>
+
+<div class="placeholder">Aquí podrías agregar un logo o imagen del proyecto</div>
 
 </body>
 </html>
